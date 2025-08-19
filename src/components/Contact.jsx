@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 const access_key = import.meta.env.VITE_WEB3_API_KEY;
 export default function Contact() {
   const [result, setResult] = React.useState("");
@@ -19,11 +20,11 @@ export default function Contact() {
 
     if (data.success) {
       setResult("");
-      alert("Form Submitted Successfully");
+      toast.success("Form Submitted Successfully");
       event.target.reset();
     } else {
       console.log("Error", data);
-      alert(data.message);
+      toast.error(data.message);
       setResult("");
     }
   };
