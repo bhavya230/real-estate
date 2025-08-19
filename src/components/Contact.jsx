@@ -2,7 +2,6 @@ import React from "react";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 
-const access_key = import.meta.env.VITE_WEB3_API_KEY;
 export default function Contact() {
   const [result, setResult] = React.useState("");
 
@@ -11,7 +10,7 @@ export default function Contact() {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", access_key);
+    formData.append("access_key", "82cd0f54-8771-4805-aa41-5e4820ab15b0");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
