@@ -1,5 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
+
 const access_key = import.meta.env.VITE_WEB3_API_KEY;
 export default function Contact() {
   const [result, setResult] = React.useState("");
@@ -30,7 +32,7 @@ export default function Contact() {
   };
 
   return (
-    <div
+    <motion.div
       className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden"
       id="Contact"
     >
@@ -87,6 +89,6 @@ export default function Contact() {
           {result ? result : "Send Message"}
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 }

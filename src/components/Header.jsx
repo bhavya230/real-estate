@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { motion } from "framer-motion";
 
 function Header() {
   return (
@@ -9,7 +10,13 @@ function Header() {
       id="Header"
     >
       <Navbar />
-      <div className="conatiner mx-auto text-center text-white py-4 px-6 md:px-20 lg:px-32">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="conatiner mx-auto text-center text-white py-4 px-6 md:px-20 lg:px-32"
+      >
         <h2 className="text-5xl sm:text-6xl md:text-[82px] inline-block max-w-3xl font-semibold pt-20">
           Explore homes that fit your dreams
         </h2>
@@ -24,7 +31,7 @@ function Header() {
             Contact Us
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
